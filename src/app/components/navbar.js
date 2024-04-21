@@ -20,24 +20,26 @@ function MobileNav({open, setOpen}) {
     const nonActiveLinkStyle = linkStyle + 'mx-4 text-black'
 
     return (
-        <div className={`absolute top-0 left-0 h-screen w-[10%] bg-gray-300 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
-            <div className="flex flex-col gap-y-4 items-center h-screen justify-center">
-            <Link href="#Home" className={currentRoute === '#Home' ? activeLinkStyle : nonActiveLinkStyle}>
-                <FaHome className="w-6 h-6 text-black"/>
-            </Link>
-            <Link href="#About" className={currentRoute === '#About' ? activeLinkStyle : nonActiveLinkStyle}>
-                <CgProfile className="w-6 h-6 text-black"/>
-            </Link>
-            <Link href="#Skills" className={currentRoute === '#Skills' ? activeLinkStyle : nonActiveLinkStyle}>
-                <MdOutlineWeb className="w-6 h-6 text-black"/>
-            </Link>
-            <Link href="#Works" className={currentRoute === '#Works' ? activeLinkStyle : nonActiveLinkStyle}>
-                <CiEdit className="w-6 h-6 text-black"/>
-            </Link>
-            <Link href="#Contact" className={currentRoute === '#Contact' ? activeLinkStyle : nonActiveLinkStyle}>
-                <MdContactMail className="w-6 h-6 text-black"/>
-            </Link>
-            </div>  
+        <div className={`absolute top-0 left-0 h-screen w-full bg-black bg-opacity-70 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+            <div className={`absolute top-0 left-0 h-screen w-[10%] bg-gray-300 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+                <div className="flex flex-col gap-y-4 items-center h-screen justify-center">
+                    <Link href="#Home" className={currentRoute === '#Home' ? activeLinkStyle : nonActiveLinkStyle}>
+                        <FaHome className="w-6 h-6 text-black"/>
+                    </Link>
+                    <Link href="#About" className={currentRoute === '#About' ? activeLinkStyle : nonActiveLinkStyle}>
+                        <CgProfile className="w-6 h-6 text-black"/>
+                    </Link>
+                    <Link href="#Skills" className={currentRoute === '#Skills' ? activeLinkStyle : nonActiveLinkStyle}>
+                        <MdOutlineWeb className="w-6 h-6 text-black"/>
+                    </Link>
+                    <Link href="#Works" className={currentRoute === '#Works' ? activeLinkStyle : nonActiveLinkStyle}>
+                        <CiEdit className="w-6 h-6 text-black"/>
+                    </Link>
+                    <Link href="#Contact" className={currentRoute === '#Contact' ? activeLinkStyle : nonActiveLinkStyle}>
+                        <MdContactMail className="w-6 h-6 text-black"/>
+                    </Link>
+                </div>  
+            </div>
         </div>
     )
 }
