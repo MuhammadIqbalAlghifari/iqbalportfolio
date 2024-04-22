@@ -64,7 +64,7 @@ export default function Navbar() {
                 </div>
                 <div className="flex justify-center items-center">
 
-                    <div className="hidden md:flex gap-x-2 items-center lg:text-sm text-xs font-semibold text-black">
+                    <div className="hidden md:flex gap-x-2 p-6 items-center lg:text-sm text-xs font-semibold text-black">
                         <Link href="#Home" className={currentRoute === '#Home' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">Home</p>
                         </Link>
@@ -89,9 +89,9 @@ export default function Navbar() {
                         setOpen(!open)
                     }}>
                         {/* hamburger button */}
-                        <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5" : ""}`} />
-                        <span className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${open ? "w-0" : "w-full"}`} />
-                        <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5" : ""}`} />
+                        <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5 bg-white" : ""}`} />
+                        <span className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${open ? "hidden" : "w-full flex"}`} />
+                        <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5 bg-white" : ""}`} />
                     </div>
                 </div>
             </nav>
