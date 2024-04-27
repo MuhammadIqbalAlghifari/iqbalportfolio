@@ -23,7 +23,7 @@ export default function ContactSection() {
                 ease: easeOut,
                 duration: 0.7,
                 stagger: 0.2,
-                delay: 0.5,
+                delay: 0.3,
                 scrollTrigger: {
                     trigger: element,
                     start: 'top bottom',
