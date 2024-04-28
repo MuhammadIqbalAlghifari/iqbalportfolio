@@ -1,13 +1,15 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation";
 import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineWeb } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { MdContactMail } from "react-icons/md";
+import gsap from "gsap";
+import { easeOut } from "framer-motion";
 
 function MobileNav({open, setOpen}) {
 
@@ -55,9 +57,15 @@ export default function Navbar() {
     const activeLinkStyle = linkStyle + 'mx-4 text-white'
 
     const nonActiveLinkStyle = linkStyle + 'mx-4 text-black hover:text-white'
+    
+    let NavbarElement = useRef()
+
+    useEffect(() => {
+        gsap.fromTo(NavbarElement, {opacity: 0, y: -100}, {opacity: 1, y: 0, duration: 0.7, delay: 0.3, ease: easeOut})
+    }, []);
 
     return (
-            <nav className="flex fixed z-50 w-full justify-between filter mb-20 poppins drop-shadow-md bg-transparent bg-opacity-70 backdrop-blur p-8 h-20 items-center">
+            <nav ref={el => {NavbarElement = el}} className="flex fixed z-50 w-full justify-between filter mb-20 poppins drop-shadow-md bg-transparent bg-opacity-70 backdrop-blur p-8 h-20 items-center">
                 <MobileNav open={open} setOpen={setOpen}/>
                 <div className="flex w-full md:w-3/6 justify-start items-center text-black">
                     <Link className="md:text-2xl text-base font-bold" href="/" style={{fontFamily: "Futura Hv"}}>Iqbal Alghifari</Link>
