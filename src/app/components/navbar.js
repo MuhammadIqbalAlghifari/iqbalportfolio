@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react"
-import { usePathname } from "next/navigation";
 import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineWeb } from "react-icons/md";
@@ -13,28 +12,20 @@ import { easeOut } from "framer-motion";
 
 function MobileNav({open, setOpen}) {
 
-    const currentRoute = usePathname()
-
-    const linkStyle = 'transition duration-300'
-
-    const activeLinkStyle = linkStyle + 'mx-4 text-black'
-
-    const nonActiveLinkStyle = linkStyle + 'mx-4 text-black'
-
     return (
         <div className={`absolute top-0 left-0 h-screen w-full bg-black bg-opacity-70 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
-            <div className={`absolute top-0 left-0 h-screen w-[10%] bg-gray-300 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+            <div className={`absolute top-0 left-0 h-screen w-[10%] p-4 bg-gray-300 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
                 <div className="flex flex-col gap-y-4 items-center h-screen justify-center">
-                    <Link href="#Home" className={currentRoute === '#Home' ? activeLinkStyle : nonActiveLinkStyle}>
+                    <Link href="#Home">
                         <FaHome className="w-6 h-6 text-black"/>
                     </Link>
-                    <Link href="#About" className={currentRoute === '#About' ? activeLinkStyle : nonActiveLinkStyle}>
+                    <Link href="#About">
                         <CgProfile className="w-6 h-6 text-black"/>
                     </Link>
-                    <Link href="#Skills" className={currentRoute === '#Skills' ? activeLinkStyle : nonActiveLinkStyle}>
+                    <Link href="#Skills">
                         <MdOutlineWeb className="w-6 h-6 text-black"/>
                     </Link>
-                    <Link href="#Works" className={currentRoute === '#Works' ? activeLinkStyle : nonActiveLinkStyle}>
+                    <Link href="#Works">
                         <CiEdit className="w-6 h-6 text-black"/>
                     </Link>
                     <Link href="#Contact" className={currentRoute === '#Contact' ? activeLinkStyle : nonActiveLinkStyle}>
@@ -49,14 +40,6 @@ function MobileNav({open, setOpen}) {
 export default function Navbar() {
     
     const [open, setOpen] = useState(false)
-
-    const currentRoute = usePathname()
-
-    const linkStyle = 'transition duration-300'
-
-    const activeLinkStyle = linkStyle + 'mx-4 text-white'
-
-    const nonActiveLinkStyle = linkStyle + 'mx-4 text-black hover:text-white'
     
     let NavbarElement = useRef()
 
@@ -73,19 +56,19 @@ export default function Navbar() {
                 <div className="flex justify-center items-center">
 
                     <div className="hidden md:flex gap-x-2 p-6 items-center lg:text-sm text-xs font-semibold text-black">
-                        <Link href="#Home" className={currentRoute === '#Home' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
+                        <Link href="#Home" style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">Home</p>
                         </Link>
-                        <Link href="#About" className={currentRoute === '#About' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
+                        <Link href="#About" style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">About me</p>
                         </Link>
-                        <Link href="#Skills" className={currentRoute === '#Skills' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
+                        <Link href="#Skills" style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">My skills</p>
                         </Link>
-                        <Link href="#Works" className={currentRoute === '#Works' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
+                        <Link href="#Works" style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">My works</p>
                         </Link>
-                        <Link href="#Contact" className={currentRoute === '#Contact' ? activeLinkStyle : nonActiveLinkStyle} style={{margin: "0 1rem 0 1rem"}}>
+                        <Link href="#Contact" style={{margin: "0 1rem 0 1rem"}}>
                             <p className="text-sm">Contact</p>
                         </Link>
                     </div>
